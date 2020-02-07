@@ -29,6 +29,7 @@ Route::get('/test/postman1','Api\TestController@postman1');//防刷测试
 
 
 Route::get('/test/md5','Api\TestController@md5test'); //注册 签名
+Route::get('/test/sign2','Api\TestController@sign2');   //post
 
 
 //接口
