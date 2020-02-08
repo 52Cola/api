@@ -28,7 +28,7 @@ Route::get('/test/postman','Api\TestController@postman');
 Route::get('/test/postman1','Api\TestController@postman1');//防刷测试
 Route::get('/test/rsa1','Api\TestController@rsa1');//私钥验签
 
-Route::get('sign/aes','Sign\SignController@aes');//对称加密
+Route::get('test/aes','Api/TestController@aes');//对称加密
 
 
 
