@@ -236,6 +236,19 @@ class TestController extends Controller
 
     }
 
+    // 对称加密
+    public function aes(){
+        echo '<hr>';
+        $str=request()->input('str');
+        // echo $str;
+        $method='AES-256-CBC';  //加密方式
+        $key='sbhsfubsfdfqwijpjpsjasfnkoihogub';    //加密的密钥
+        $iv='jingtdjopvrfhutd';       //必须为16位
+        $enc=base64_decode($str);
+        $d=openssl_decrypt($enc,$method,$key,OPENSSL_RAW_DATA,$iv);
+        echo '解密后的数据：'.$d;
+    }
+
    
 
 }
