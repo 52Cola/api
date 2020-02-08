@@ -215,6 +215,27 @@ class TestController extends Controller
 
     }
 
+       /**
+     * 使用私钥验签
+     */
+    public function rsa1()
+    {
+        $priv_key = file_get_contents(storage_path('keys/priv.key'));
+        echo $priv_key;echo "<hr>";
+        $data = "小小马"; 
+        echo "待价加密数据 ：".$data; echo "<hr>";
+        openssl_private_encrypt($data,$enc_data,$priv_key);
+        var_dump($enc_data);
+        echo "<hr>";
+
+        $base64_encode_str = base64_encode($enc_data);
+        echo "base64数据: ".$base64_encode_str;
+        $url = 'http://passport.mayang.xn--6qq986b3xl/rsa?data='.urlencode($base64_encode_str);
+        echo '发送地址: '.$url;
+        file_get_contents($url);    //发送请求
+
+    }
+
    
 
 }
