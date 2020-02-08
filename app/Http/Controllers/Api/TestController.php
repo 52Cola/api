@@ -216,9 +216,10 @@ class TestController extends Controller
     }
 
        /**
-     * 使用私钥验签
+     * 使用私钥加密
      */
-    public function rsa1()
+    
+     public function rsa1()
     {
         $priv_key = file_get_contents(storage_path('keys/priv.key'));
         echo $priv_key;echo "<hr>";
